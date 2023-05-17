@@ -10,7 +10,7 @@ BACKGROUND_COLOR = (20, 20, 20)
 
 
 class Pendulum:
-    def __init__(self, cable_origin: pg.Vector2, cable_lenght: int, angle: int, radius: int):
+    def __init__(self, cable_origin: pg.Vector2, cable_lenght: int, angle: int, radius: int = 20):
         self.angle = np.deg2rad(angle)
         self.cable_lenght = cable_lenght
         self.cable_origin = cable_origin
@@ -49,25 +49,21 @@ def main():
         cable_origin=pg.Vector2(500, 50),
         cable_lenght=300,
         angle=60,
-        radius=20,
     )
     pend2 = Pendulum(
         cable_origin=pg.Vector2(500, 50),
         cable_lenght=150,
         angle=60,
-        radius=20,
     )
     pend3 = Pendulum(
         cable_origin=pg.Vector2(500, 50),
         cable_lenght=100,
         angle=60,
-        radius=20,
     )
     pend4 = Pendulum(
         cable_origin=pg.Vector2(500, 50),
         cable_lenght=150,
         angle=0,
-        radius=20,
     )
     pendulums = [pend, pend2, pend3, pend4]
 
