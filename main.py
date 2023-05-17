@@ -26,7 +26,6 @@ class Pendulum:
         self.angle += self.ang_vel * dt
 
 
-
     def show(self, screen: pg.Surface):
         x = self.cable_lenght * np.sin(self.angle)
         y = self.cable_lenght * np.cos(self.angle)
@@ -34,10 +33,6 @@ class Pendulum:
 
         pg.draw.line(screen, COLOR_STROKE, self.cable_origin, ball_pos, 2)
         pg.draw.circle(screen, COLOR_BALL, ball_pos, self.ball_radius)
-
-
-
-
 
 
 def main():
@@ -66,7 +61,6 @@ def main():
         angle=0,
     )
     pendulums = [pend, pend2, pend3, pend4]
-
 
     # main loop
     running = True
