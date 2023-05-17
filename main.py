@@ -39,28 +39,23 @@ def main():
     pg.init()
     screen = pg.display.set_mode((1000, 600))
     clock = pg.time.Clock()
-    
-    pend = Pendulum(
-        cable_origin=pg.Vector2(500, 50),
-        cable_lenght=300,
-        angle=60,
-    )
-    pend2 = Pendulum(
-        cable_origin=pg.Vector2(500, 50),
-        cable_lenght=150,
-        angle=60,
-    )
-    pend3 = Pendulum(
-        cable_origin=pg.Vector2(500, 50),
-        cable_lenght=100,
-        angle=60,
-    )
-    pend4 = Pendulum(
-        cable_origin=pg.Vector2(500, 50),
-        cable_lenght=150,
-        angle=0,
-    )
-    pendulums = [pend, pend2, pend3, pend4]
+
+    values = [
+        (300, 60),
+        (150, 60),
+        (100, 60),
+        # (350, 0),
+    ]
+    pendulums = []
+    for value in values:
+        lenght, angle = value
+        pend = Pendulum(
+            cable_origin=pg.Vector2(500, 50),
+            cable_lenght=lenght,
+            angle=angle,
+        )
+        pendulums.append(pend)
+
 
     # main loop
     running = True
